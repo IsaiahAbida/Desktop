@@ -1,0 +1,22 @@
+TPS 1:
+1) The Heap which stores dynamically allocated memory. The stack which stores local variables and functions. Data/static memory is for global variables.
+
+2 a) 3 variables: num ptr and handles.
+
+2 b) 2 pointers: ptr is a pointer to int. handles is a pointer to a pointer that points to int
+
+2 c) These are local variables thus they are on the stack memory pool.
+
+2 d) malloc allocates memory on the heap thus ptr would then point to a space on the heap.
+
+TPS 2: 
+
+1) The code so far is a Node struct that resembles the start of a linked list. Currently the code only initializes the first node and dynamically creates space for it and has a int and float value inside of it.
+
+2) Value of head (address stored in pointer): 0x1002054e0
+Address of head: 0x16fdfee40
+Address of iValue: 0x1002054e0
+Address of fValue: 0x1002054e4
+Address of next: 0x1002054e8
+
+3) Some things i notice is that the pointer head is the staring address of the first member of the struct but head itself is stored on the stack. The adresses are also stored next to eachother on the heap which is to be expected

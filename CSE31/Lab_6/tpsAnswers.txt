@@ -1,0 +1,63 @@
+TPS 1
+1)  Text Segment (code) starts at 0x00400000
+    Data Segment (variables) starts at 0x10010000
+2) The Basic version corresponds directly to the actual machine code instructions, while the Source version is a more human-readable format that may be translated into multiple Basic instructions by the assembler.
+3) Difference between addresses = 4 bytes
+4) 4 columns per address
+5) Each address increases by 4 bytes because each row represents one 4-byte word, and each column represents one byte.
+6)  Use .word to declare and initialize it:
+    m: .word 20
+7) m is stored at 0x10010004
+8)str1: .asciiz "I love CSE31!"
+9)str1 stored from 0x10010008 to 0x10010015` (spanning 3 address rows, since MARS shows 4 bytes per row).
+10)Yes, the ASCII display agrees with what we learned earlier—each character is stored as one byte in sequential memory, ending with a null terminator (0x00).
+11)li $v0, 4
+    la $a0, str1
+    syscall
+12)la $t3, n loads the address of variable n (e.g., 0x10010000) into $t3, not the value of n.
+
+TPS 2
+.data
+n:      .word 25                # constant value to compare with
+
+# Strings to print based on comparison results
+str1:   .asciiz "Less than\n"
+str2:   .asciiz "Less than or equal to\n"
+str3:   .asciiz "Greater than\n"
+str4:   .asciiz "Greater than or equal to\n"
+
+.text
+main:
+    #Read integer from user 
+    li      $v0, 5              # syscall code 5: read integer
+    syscall                     # get user input
+    move    $t0, $v0            # store user input in $t0
+
+    # Load n into $t1 
+    la      $t2, n              # load address of n
+    lw      $t1, 0($t2)         # load value of n into $t1
+
+    # Step 5: Compare if user input < n
+    slt     $t3, $t0, $t1       # $t3 = 1 if $t0 < $t1
+    bne     $t3, $zero, LESS    # if $t3 == 1, branch to LESS
+
+    #Step 6: Compare if user input >= n 
+    # If not less than, then it must be greater than or equal
+    j       GREATER_EQUAL
+
+LESS:
+    la      $a0, str1           # load "Less than"
+    li      $v0, 4              # syscall code 4: print string
+    syscall
+    j       END                 # skip rest
+
+GREATER_EQUAL:
+    la      $a0, str4           # load "Greater than or equal to"
+    li      $v0, 4
+    syscall
+
+END:
+    li      $v0, 10             # syscall code 10: exit
+    syscall
+
+    

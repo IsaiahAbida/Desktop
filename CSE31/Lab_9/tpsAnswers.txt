@@ -1,0 +1,42 @@
+Tps 1:
+4)All MIPS instructions are 32 bits long.
+
+5) 3 types, R,J, and I. Register type examples would be add and slt. Immediate types would be addi and lw. Jump types is j and Jal
+
+6)  a) addi uses I-type. fields opcode, rs,rt, and Immediate
+    b)opcode for addi = 0x08
+    rs = $zero = register 0 → hex = 0x00
+    rt = $s0 = register 16 → hex = 0x10
+     immediate = 25 → hex = 0x0019
+    c)0x20100019
+
+7)  a)0x0230402A
+    b)R-type. Fields opcode, rs, rt, rd, shamt, funct
+    c)opcode = 000000 → 0x00
+    rs     = 10001  → $s1 = 17 → 0x11
+    rt     = 10000  → $s0 = 16 → 0x10
+    rd     = 01000  → $t0 = 8  → 0x08
+    shamt  = 00000  → 0x00
+    funct  = 101010 → 0x2A  
+    d)rd = $t0
+    rs = $s1
+    rt = $s0
+    e)slt $t0, $s1, $s0
+
+8)  a)bne = I-type
+    b)opcode of bne = 0x05
+    rs = $t0 = 8 → 0x08
+    rt = $zero = 0 → 0x00
+    immediate = (computed below)
+    c)LESS is at 0x00400024
+    d) No, Branches do not store an address — they store a relative offset in number of instructions.
+    e)offset = (0x24 - 0x1C) / 4
+    offset = (8) / 4 = 2
+    Immediate = 2 = 0x0002
+    f)0x15000002
+
+9)  a)Jump is J-type fields opcode, address.
+    b)j = opcode 2 → 0x02
+    c)0x00400030
+    d)0x00400030 >> 2 = 0x0010000C
+    e)0x0800000C

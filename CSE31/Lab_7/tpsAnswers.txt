@@ -1,0 +1,25 @@
+TPS 1 :
+1)  A procedure is a named block of code (a “subroutine” or “subprogram”) that performs some operation, but traditionally does not return a value.
+    A function is also a named block of code, but it returns a value. It can be used in an expression since it gives back something. 
+    A method is like a function or procedure but specifically one that is associated with a class or object in object-oriented programming. It acts on the object’s state.
+
+4) Line 20 (SUM:	add $v0, $a0, $a1) . This code is saying Take the two arguments passed in $a0 and $a1, add them together and store the result in $v0
+
+5) No, you cannot replace jr $ra with j in a proper function.
+
+6) The return address is saved in this line addi $ra, $zero, 0 . No — 0 is NOT a valid return address.
+
+7) You get an error because jr $ra tries to jump to address 0.
+
+8) The correct return address should be 0x00400020
+
+9-10) new address is 0x0400028. ouput is 15
+
+11) jal SUM
+
+TPS 2:
+1) jal SUB will overwrite $ra, so SUM must save its own return address.
+
+2)SUM changes $a0, but after SUB returns, SUM needs the original $a0 so it can compute:
+
+3) SUM must save/restore $s0.

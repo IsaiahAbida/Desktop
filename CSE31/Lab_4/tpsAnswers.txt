@@ -1,0 +1,33 @@
+TPS 1
+1) All for elements were 2, so 2 will be printed.
+
+2) I expect it to print nothing or maybe cause an error.
+
+3) 2 was printed instead of my orginal thought of it likely being blank
+
+4)  four_ints[0] after writing via four_c: 44434241
+    four_ints[1] after writing via four_c: 2.         After. seeing the results i'm not surprised and it makes sense.
+
+5)  a)One array 
+    b)Yes, because you cast our_ints into a char*
+    c)Yes they indeed print the same address.
+
+6) &four_ints[0] = 0x16fdfeea8, value = 44434241
+&four_ints[1] = 0x16fdfeeac, value = 2
+&four_ints[2] = 0x16fdfeeb0, value = 2
+&four_ints[3] = 0x16fdfeeb4, value = 2
+ The difference of the adresses show that the size of int is indeed 4 bytes
+
+ 8) Consecutive addresses of four_c increase by 1 byte (since sizeof(char) = 1). In contrast, four_ints addresses increased by 4 bytes per element.
+
+ 10) Ints jump in size of 4 bytes whereas char jumps in bytes of 1.
+
+ TPS 2)
+
+ 1) Line #8 allocates memory for the first level of a 2-D array,
+
+ 2)*(arr + i). Here *(arr + i) gives you the pointer stored in the ith element of the first-level array You can then allocate a row with: *(arr + i) = (int*) malloc(n * sizeof(int));
+
+ 4) C arrays do not carry size info with the pointer.
+
+ 

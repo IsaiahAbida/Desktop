@@ -1,0 +1,15 @@
+Assignment 1:
+1) The line that caused the segmentation fault is line 25
+
+2) To fix this error you will need to add an "&" before "input" as scanf requires an address to store the values into
+
+3) The bug is that the sum variable is not being updated in main as iit's being passed by value and not by reference.
+
+4) To fix the bug i simply changed the parameter of read_values to a pointer so that main can directly change the value of sum.
+
+Assignment 2:
+1)The output seems as expected.
+
+2)The bug here is that it is also attaching a string from one of the previous strings that were appended.
+To fix this bug i added this line "  s1[s1len + s2len] = '\0'; " which properly terminates the string so that once appended, the string is terminated and thus doesn't cause bugs to the next strings being appended.
+

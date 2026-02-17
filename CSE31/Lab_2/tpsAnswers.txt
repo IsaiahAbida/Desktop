@@ -1,0 +1,42 @@
+TPS 2)
+1) To compile punishment.c file for debugging with LLDB in my case and name the executable punish, you need to use the -g flag with the GCC compiler.
+
+2) in my case i would use lldb punish
+
+3) Simply type "run"
+
+4)A breakpoint tells the debugger to pause at a certain line to inspect values and steps in the code. To set a breakpoint we would use the command breakpoint set --file punishment.c --line 23 where line 23 is the start of the for loop
+
+5)To run the code line by line you can simply type "next" when ready to go to the next line or "step"
+
+6)To see the value of a variable in the terminal, you can do the command "print varialbe" in this case we can do something like print repetitionCount
+
+7) To let the program finish without going line by line you can use the command "continue"
+
+8) To exit lldb you can use the command "quit" 
+
+TPS 3)
+1) There is 4 variables declared, 2 of them(px and py) being pointers.
+
+2) If ran as is, the variables are uninitialized so you get garbage values( whatever bits that hapen to be in that spot in memory). In my case i got x = 37552384, y = 0, arr[0] = 37552384.
+
+3) You can initialize them when they are declared. i set x = 1 and y = 2
+
+4) Using the print statements i foind Address of x = 0x16d44f558, Adress of  y = 0x16d44f554%.
+
+5) my results are : px has an address of 0x16dc0b548, stored value = 0x16dc0b558 . py has an address 0x16dc0b540, stored value = 0x16dc0b554
+
+6) the contents of arr is arr[0] = 71205120
+arr[1] = 1
+arr[2] = 256
+arr[3] = 0
+arr[4] = 0
+arr[5] = 0
+arr[6] = 2104229993
+arr[7] = -822833616
+arr[8] = 71171772
+arr[9] = 1
+
+7) confirmed the addresses are the same. adress of arr = 0x16cf63560 address of arr[0] = 0x16cf63560
+
+8) yes the fact that they are the same makes sense as array names behave like pointers

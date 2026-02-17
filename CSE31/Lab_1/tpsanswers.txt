@@ -1,0 +1,19 @@
+TPS 1
+1) Isaiah Abida
+
+TPS 2
+1) To open a terminal on my mac computer, you can use the shortcut command spacebar to op$
+a) Yes, in order to open another terminal you can use the shortcut command n to open anot$
+b) Having more than 1 terminal at a time is beneficial as you can be in different directo$
+2) The command is ls
+3) The command is cd Desktop
+4) Use the command mkdir CSE31
+
+TPS 3
+3) The command is gcc main.c -o my_program
+4) If there was an error, it would show in the terminal. If no error is shown, the progra$
+5) The -c flag in GCC instructs the compiler to compile or assemble the source files
+6) The -g flag in GCC instructs the compiler to generate debugging information and embed $
+7) You would run the command gcc main.c -o cselab1
+8) gcc will begin a process where they begin to compile and then run your code.
+9)./cselab1 would run the program we just compiled.

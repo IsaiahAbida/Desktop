@@ -1,0 +1,28 @@
+TPS 1:
+1) MARS stands for MIPS Assembler and Runtime Simulator
+5) 
+a)Open the code my navigating through file in the top left
+b)Click the wrench & scredriver icon in the top middle
+c) Press the arrow in the top middle
+d) no you must assemble first
+e) press the arrowbutton that has a 1 under it
+f) press the double back arrow 
+
+TPS 2:
+1) .data should contain anything that should have memory. stuff like variables constants etc. .word contains numbers or arrays of numbers. .text contains assembly instructions like add beq bne ect.
+2)If the counter $t3 has reached 0, we’re done calculating Fibonacci numbers, so jump to the finish section; otherwise, keep computing.
+3)Go back to the start of the Fibonacci loop and check if we need to continue.
+4) Load and assemble fib.s in MARS.
+    Scroll to line 15: j fib.
+    Click the left margin next to line 15 → red dot appears (breakpoint set).
+    Run program using Run → Go (or Step) → execution pauses at line 15. 
+    Inspect registers, memory, or continue stepping through the program.
+    Remove breakpoint by clicking the red dot again.
+5) continue using the run or step buttons
+6)Run or step the program, then look at the Registers window to see current values. 
+    To modify the registe
+    
+    rs, Pause the program → click the register value in the Registers wi ndow → type new value → press Enter → continue execution.
+ 7) The address of n is 0x10010000
+ 13th fib number is 233
+8)syscall = “ask the OS/simulator to do something”

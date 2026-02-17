@@ -1,0 +1,43 @@
+TPS 1
+4)We read an integer from the user using syscall 5 and store it into $t3.
+5)Since the program now uses user input, we no longer need the .data variable n, nor the la and lw that loaded it. We commented or removed them.
+
+TPS 2 
+1) The output would be 29
+
+2)It prints a prompt asking for an integer. It reads an integer from the user using syscall 5. It places that integer in $a0, the argument register for function calls. It uses jal recursion to call the recursion function. After recursion returns its value in $v0, main prints the result and exits.
+
+3)  li $v0, 4
+    la $a0, prompt
+    syscall
+
+4)  li $v0, 5
+    syscall
+    move $a0, $v0
+
+5)  move $a0, $v0
+    li $v0, 1
+    syscall
+
+6)  move $a0, $v0
+    li $v0, 1
+    syscall
+
+7)sw $ra, 0($sp)
+
+10)The recursion function modifies $a0 to pass new arguments. But after the first recursion returns, we still need the ORIGINAL $a0 to compute the second recursion argument. If we don’t save $a0, the second call receives the wrong number.
+
+11) lw   $a0, 4($sp)
+    addi $a0, $a0, -2   
+
+12)move $t1, $v0
+
+13) lw   $a0, 4($sp)
+    addi $a0, $a0, -1
+
+14) move $t2, $v0     
+    add  $v0, $t1, $t2
+
+15) lw $ra, 8($sp)
+    addi $sp, $sp, 12
+    jr $ra

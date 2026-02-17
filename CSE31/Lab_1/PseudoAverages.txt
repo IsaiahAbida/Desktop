@@ -1,0 +1,42 @@
+TPS activity 4 Pseudocode for averages.c
+
+Initialize sum_even = 0
+Initialize count_even = 0
+Initialize sum_odd = 0
+Initialize count_odd = 0
+Initialize counter = 1
+
+Loop until user enters "0"
+        Prompt the user: "Enter the <counter> integer; "
+        Read number
+
+        If number == 0:
+                Break loop
+
+        Compute digit_sum = o
+        Copy temp = number
+        While temp > 0:
+                digit_sum = digit_sum + (temp % 10)
+                temp = temp / 10
+        If digit_sum is even:
+                sum_even = sum_even + number
+                counter_even = count_even + 1
+        Else:
+                sum_odd = sum_odd + number
+                count_odd = count_odd + 1
+
+        Increase counter by 1
+
+If count_odd > 0:
+        avg_odd = sum_odd / count_odd
+Else:    
+        avg_even = 0
+
+If count_odd > 0:
+        avg_odd = sum_odd / count_odd
+Else:
+        avg_odd = 0
+
+Print "The average of numbers whose digits sum up to an even number is <avg_even>"
+Print "The average of numbers whose digits sum up to an odd number is <avg_odd>"
+
